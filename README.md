@@ -12,7 +12,7 @@ This can be installed using pip by following the steps below.
 In your Python environment, install django_tables2_ajax.
 
 ```
-pip install django_tables2_ajax
+pip install django-tables2-ajax
 ```
 
 Add the following to your projects *INSTALLED_APPS* variable found in *settings.py* so it looks as such.
