@@ -3,7 +3,7 @@
 
 This project is intended to provide added functionality to the already outstanding [django_tables2](https://github.com/jieter/django-tables2) library, inspired & based off of [django-ajax-tables](https://github.com/KiwiTrinsic/django-ajax-tables). Using this package, you'll be able to easily implement responsive full-text search capabilities, pagination and more.
 
-See project on [GitHub](https://github.com/LegendaryFire/django-tables2-ajax).
+See project on [GitHub](https://github.com/LegendaryFire/django_tables2_ajax).
 
 ## Installation
 
