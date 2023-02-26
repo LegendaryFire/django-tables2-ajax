@@ -1,0 +1,37 @@
+<div class="input-group flex-nowrap">
+    <div class="input-group input-group-navbar">
+        <input type="text" id='{{ table_id }}_search' class="form-control" placeholder="Search..." aria-label="Search">
+    </div>
+</div>
+
+<div id="{{ table_id }}"></div>
+
+<script type='text/javascript'>
+    let typingTimer_{{ table_id }}; // Timer identifier
+    const doneTypingInterval_{{ table_id }} = 500; // Time in ms, 0.5 seconds for example
+    // The ID of the search bar should be in the following format, { unique_div }_search
+    const searchElement_{{ table_id }} = document.getElementById("{{ table_id }}_search");
+
+    // Load initial values when page is loaded.
+    document.addEventListener("DOMContentLoaded", function() {
+        update('', "{{ table_id }}", "{{ table_url }}");
+        searchElement_{{ table_id }}.addEventListener("keyup", keyUp_{{ table_id }});
+        searchElement_{{ table_id }}.addEventListener("keydown", keyDown_{{ table_id }});
+    });
+
+    // On keyup event, start the countdown.
+    function keyUp_{{ table_id }}(e) {
+        clearTimeout(typingTimer_{{ table_id }});
+        typingTimer_{{ table_id }} = setTimeout(doneTyping_{{ table_id }}, doneTypingInterval_{{ table_id }});
+    }
+
+    //On keydown, clear the countdown.
+    function keyDown_{{ table_id }}(e) {
+        clearTimeout(typingTimer_{{ table_id }});
+    }
+
+    //User is finished typing.
+    function doneTyping_{{ table_id }}(e) {
+        update('', "{{ table_id }}", "{{ table_url }}", searchElement_{{ table_id }}.value);
+    }
+</script>
